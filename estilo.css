@@ -1,0 +1,133 @@
+body{
+    background-color: #090909 !important;
+    margin:0;
+    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h1{
+    color:#fff;
+    font-family: coolvetica;
+    text-transform: uppercase;
+    font-size: 60px !important;
+    letter-spacing: 5px;
+    margin-top: 13% !important;
+    margin-left: -40%;
+}
+
+.efecto-block {
+    position: relative;
+    text-align: center;
+}
+
+.revelo {
+    width:100%;
+    color: transparent;
+    padding: 4px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    animation: reveloBloque 2s forwards;
+}
+
+.revelo b{
+    font-family: Vogue;
+    text-transform: lowercase !important;
+    color: #ff0081;
+}
+.revelo::after {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ff0081;
+    animation: reveloIn 1s forwards, reveloOut 1s 1s forwards;
+}
+
+@keyframes reveloBloque {
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes reveloIn {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes reveloOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+button{
+    margin-top:-50px !important;
+    margin-left:-43% !important;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background-color: #ff0081 !important;
+    border: 1px solid #ff0081 !important;
+    color:#fff !important;
+    font-size: 16px;
+    font-family: Vogue !important;
+    letter-spacing: 3px !important;
+    transition: .4s ease-in-out !important;
+}
+
+button:hover{
+    background-color: #ff48a5 !important;
+    transition: .4s ease-in-out !important;
+}
+
+.nombres{
+    background-color: #060606;
+    width:30%;
+    height:60%;
+    padding: 15px 30px;
+    margin-right: -60%;
+    margin-top: -12%;
+    box-shadow: 1px 1px #ff0081, 2px 2px #ff0081;
+}
+
+p{
+    font-family: coolvetica !important;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255,119,188,0.3);
+    opacity: 0.6;
+    box-shadow: 0 0 5px rgba(255,119,188,0.2),0 0 10px rgba(255,119,188,0.2), 0 0 15px rgba(255,119,188,0.2);
+    backdrop-filter: blur(10px);
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.bubble {
+    animation: float infinite ease-in;
+}
